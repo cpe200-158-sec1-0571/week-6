@@ -6,16 +6,20 @@ namespace Lab601
   {
     public static void Main()
     {
-      ContinentFactory africa = new AfricaFactory();
-      AnimalWorld world = new AnimalWorld(africa);
+      ContinentFactory asian = new AsianFactory();
+      AnimalWorld world = new AnimalWorld(asian);
       world.RunFoodChain();
  
       ContinentFactory america = new AmericaFactory();
       world = new AnimalWorld(america);
       world.RunFoodChain();
- 
-      // Wait for user input
-      Console.ReadKey();
+
+      ContinentFactory africa = new AfricaFactory();
+      world = new AnimalWorld(africa);
+      world.RunFoodChain();
+
+            // Wait for user input
+            Console.ReadKey();
     }
   }
  
@@ -47,8 +51,19 @@ namespace Lab601
       return new Wolf();
     }
   }
- 
-  abstract class Herbivore
+    class AsianFactory : ContinentFactory
+    {
+        public override Herbivore CreateHerbivore()
+        {
+            return new Elephent();
+        }
+        public override Carnivore CreateCarnivore()
+        {
+            return new Tiger();
+        }
+    }
+
+    abstract class Herbivore
   {
   }
  
@@ -74,8 +89,20 @@ namespace Lab601
   class Bison : Herbivore
   {
   }
- 
-  class Wolf : Carnivore
+    class Elephent : Herbivore
+    {
+    }
+    class Tiger : Carnivore
+    {
+        public override void Eat(Herbivore h)
+        {
+            // Eat Elephent
+            Console.WriteLine(this.GetType().Name +
+              " eats " + h.GetType().Name);
+        }
+    }
+
+    class Wolf : Carnivore
   {
     public override void Eat(Herbivore h)
     {
