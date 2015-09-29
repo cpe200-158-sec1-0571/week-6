@@ -20,7 +20,7 @@ from the provided C# source code.
   - Test the new requirment by modifying the main function and show the result.
   ![570610571](http://www.uppic.biz/images/2015/09/29/output.jpg)
   - Show the main function and snippet of C# code that is related to the process.
-  ![570610571](http://www.uppic.biz/images/2015/09/29/main.jpg)
+  ![570610571](http://www.uppic.biz/images/2015/09/29/main_new.jpg)
   ![570610571](http://www.uppic.biz/images/2015/09/29/1.jpg)
   ![570610571](http://www.uppic.biz/images/2015/09/29/2.jpg)
 
